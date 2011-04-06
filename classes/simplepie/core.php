@@ -1471,7 +1471,7 @@ class SimplePie_Core
 				if ($cache && !$this->xml_dump)
 				{
 					// Load the Cache
-					$this->data = $cache->load();
+					$this->data = $cache->load()->data;
 					if (!empty($this->data))
 					{
 						// If the cache is for an outdated build of SimplePie
