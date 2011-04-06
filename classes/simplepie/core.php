@@ -1471,9 +1471,12 @@ class SimplePie_Core
 				if ($cache && !$this->xml_dump)
 				{
 					// Load the Cache
-					$this->data = $cache->load()->data;
+					$this->data = $cache->load();
 					if (!empty($this->data))
 					{
+						// Fetch the data from the cached object
+						$this->data = $this->data->data;
+
 						// If the cache is for an outdated build of SimplePie
 						if (!isset($this->data['build']) || $this->data['build'] !== SIMPLEPIE_BUILD)
 						{
