@@ -1,4 +1,4 @@
-# SimplePei
+# SimplePie
 
 SimplePie implements the SimplePie RSS classes in a package for FuelPHP.
 
