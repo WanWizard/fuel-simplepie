@@ -2672,7 +2672,7 @@ class SimplePie_Core
 		{
 			if (!empty($this->multifeed_objects))
 			{
-				$this->data['items'] = SimplePie::merge_items($this->multifeed_objects, $start, $end, $this->item_limit);
+				$this->data['items'] = $this->merge_items($this->multifeed_objects, $start, $end, $this->item_limit);
 			}
 			else
 			{
@@ -2784,7 +2784,7 @@ class SimplePie_Core
 			$items = array();
 			foreach ($urls as $arg)
 			{
-				if (is_a($arg, 'SimplePie'))
+				if (is_a($arg, 'Simplepie\\Factory'))
 				{
 					$items = array_merge($items, $arg->get_items(0, $limit));
 				}
@@ -2806,7 +2806,7 @@ class SimplePie_Core
 			$item = null;
 			if ($do_sort)
 			{
-				usort($items, array('SimplePie', 'sort_items'));
+				usort($items, array(&$this, 'sort_items'));
 			}
 
 			if ($end === 0)
