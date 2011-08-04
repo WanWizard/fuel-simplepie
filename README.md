@@ -14,4 +14,4 @@ and then you can simply type in:
 
 # Usage
 
-See http://http://simplepie.org/wiki/reference/start
+See http://simplepie.org/wiki/reference/start
